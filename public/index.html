@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <title>todoList</title>
+  </head>
+  <body>
+    <div class="wrap">
+        <ul class="header d-flex justify-content-center ">
+          <li class="active"><a href="#">My tasks</a></li>
+          <li><a href="#">In Progress</a></li>
+          <li><a href="#">Completed</a></li>
+        </ul>
+        <div class="addRemark">
+          <span class="text"><span class="addIcon">＋</span> Add Task</span>
+        </div>
+        <!-- <div class="added">
+          <div class="addTitle">
+            <input type="checkbox">
+            <input type="text" class="titleInput" placeholder="Type Something Here...">
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </div>
+          <div class="addContent">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <span class="">Deadline</span>
+            <input type="text" class="year" placeholder="yyyy/mm/dd">
+            <input type="text" class="hour" placeholder="hh:mm">
+            <span>File</span>
+            <i class="fa fa-file-o" aria-hidden="true"></i>
+            <a href="#" class="upload">+</a>
+            <span class="Comment">Comment</span>
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            <textarea name="comment" cols="30" rows="10" placeholder="Type your memo here..."></textarea>
+          </div>
+          <div class="addButton">
+            <a href="#" class=""><span>X</span>Cancle</a>
+            <a href="#" class=""><span>+</span> Add Task</a>
+          </div>
+        </div> -->
+        <ul class="remark">
+          <li>
+            <input type="checkbox">
+            <span class="remarkTitle">Type Something Here...</span>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <p class="remarkState">
+              <i class="fa fa-calendar stateFirstIcon" aria-hidden="true"></i>
+              <span>5/14</span>
+              <i class="fa fa-file-o" aria-hidden="true"></i>
+              <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            </p>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="remarkTitle">Type Something Here...</span>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <p class="remarkState">
+              <i class="fa fa-file-o stateFirstIcon" aria-hidden="true"></i>
+              <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            </p>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="remarkTitle">Type Something Here...</span>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <p class="remarkState">
+              <i class="fa fa-calendar stateFirstIcon" aria-hidden="true"></i>
+              <span>6/18</span>
+            </p>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="remarkTitle">Type Something Here...</span>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <p class="remarkState">
+              <i class="fa fa-file-o stateFirstIcon" aria-hidden="true"></i>
+            </p>
+          </li>
+          <li>
+            <input type="checkbox" checked>
+            <span class="remarkTitle">Type Something Here...</span>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <p class="remarkState">
+              <i class="fa fa-calendar stateFirstIcon" aria-hidden="true"></i>
+              <span>5/14</span>
+              <i class="fa fa-file-o" aria-hidden="true"></i>
+              <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            </p>
+          </li>
+        </ul>
+        <p class="remain">4tasks left</p>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="./js/all.js"></script>
+  </body>
+</html>

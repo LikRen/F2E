@@ -1,0 +1,258 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-size: 16px;
+  font-family: "Roboto","PingFang TC","Noto Sans TC";
+  background-color: #e1e1e1; }
+  body .wrap {
+    max-width: 100%;
+    margin: 0 auto; }
+    body .wrap .header {
+      width: 100%;
+      background-color: #4A90E2;
+      height: 76px; }
+      body .wrap .header li {
+        text-align: center;
+        height: 76px;
+        line-height: 76px;
+        border-bottom: 5px solid #4A90E2;
+        width: 160px;
+        margin: 0 30px; }
+        body .wrap .header li.active {
+          border-bottom: 5px solid #00408B; }
+          body .wrap .header li.active a {
+            color: white; }
+        body .wrap .header li:hover {
+          border-bottom: 5px solid #00408B; }
+        body .wrap .header li a {
+          font-size: 24px;
+          color: #00408B;
+          text-decoration: none; }
+    body .wrap .addRemark {
+      width: 620px;
+      height: 65px;
+      background-color: #fff;
+      border: 2px solid #C8C8C8;
+      border-radius: 5px;
+      margin: 24px auto;
+      cursor: pointer; }
+      body .wrap .addRemark .text {
+        font-size: 24px;
+        color: #C8C8C8;
+        line-height: 60px; }
+        body .wrap .addRemark .text .addIcon {
+          font-size: 26px;
+          margin: 0px 1px 0px 25px; }
+    body .wrap .added {
+      width: 620px;
+      height: 520px;
+      margin: 24px auto;
+      background: #F2F2F2;
+      -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
+              box-shadow: 0 4px 4px 0 #C8C8C8;
+      border-radius: 5px;
+      position: relative; }
+      body .wrap .added .addTitle {
+        height: 76px;
+        border-bottom: 2px solid #C8C8C8; }
+        body .wrap .added .addTitle .titleInput {
+          border: none;
+          background-color: #F2F2F2;
+          margin: 24px 0 0 72px;
+          width: 250px;
+          height: 28px; }
+        body .wrap .added .addTitle input[type=checkbox] {
+          -webkit-transform: scale(1.7);
+              -ms-transform: scale(1.7);
+                  transform: scale(1.7);
+          position: absolute;
+          left: 32px;
+          top: 32px; }
+        body .wrap .added .addTitle input::-webkit-input-placeholder {
+          font-size: 24px;
+          color: #000;
+          font-family: Roboto-Medium; }
+        body .wrap .added .addTitle i {
+          position: absolute;
+          top: 24px;
+          font-size: 24px;
+          cursor: pointer; }
+        body .wrap .added .addTitle .fa-star-o, body .wrap .added .addTitle .fa-star {
+          right: 88px; }
+        body .wrap .added .addTitle .fa-pencil {
+          right: 32px; }
+      body .wrap .added .addContent {
+        position: relative; }
+        body .wrap .added .addContent i {
+          position: absolute;
+          font-size: 20px;
+          cursor: pointer; }
+        body .wrap .added .addContent .fa-calendar {
+          top: 27px;
+          left: 72px; }
+        body .wrap .added .addContent .fa-file-o {
+          top: 116px;
+          left: 72px; }
+        body .wrap .added .addContent .fa-commenting-o {
+          top: 207px;
+          left: 72px; }
+        body .wrap .added .addContent span {
+          display: block;
+          margin: 27px 0 0 96px;
+          font-size: 20px;
+          color: #000000; }
+        body .wrap .added .addContent .year, body .wrap .added .addContent .hour {
+          border: none;
+          width: 162px;
+          height: 35px; }
+          body .wrap .added .addContent .year::-webkit-input-placeholder, body .wrap .added .addContent .hour::-webkit-input-placeholder {
+            font-family: Roboto-Regular;
+            font-size: 16px;
+            color: #C8C8C8;
+            padding-left: 16px; }
+        body .wrap .added .addContent .year {
+          margin: 8px 0 0 96px; }
+        body .wrap .added .addContent .hour {
+          margin-left: 8px; }
+        body .wrap .added .addContent .upload {
+          width: 32px;
+          height: 32px;
+          line-height: 32px;
+          text-decoration: none;
+          text-align: center;
+          display: block;
+          background: #C8C8C8;
+          border-radius: 2px;
+          margin: 11px 0 0 96px;
+          font-size: 22px;
+          font-weight: bolder;
+          color: white; }
+        body .wrap .added .addContent textarea {
+          width: 455px;
+          height: 120px;
+          border: none;
+          margin: 8px 0 0 96px;
+          padding: 10px;
+          font-size: 16px;
+          color: #C8C8C8;
+          line-height: 24px; }
+      body .wrap .added .addButton {
+        height: 60px;
+        margin-top: 30px; }
+        body .wrap .added .addButton a {
+          display: inline-block;
+          float: left;
+          width: 310px;
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+          background-color: #fff;
+          font-size: 24px;
+          color: #D0021B; }
+    body .wrap .remark {
+      width: 620px;
+      margin: 0 auto; }
+      body .wrap .remark li {
+        border-radius: 5px;
+        background-color: #F2F2F2;
+        border: 1px solid #F2F2F2;
+        display: block;
+        margin-bottom: 8px;
+        position: relative; }
+      body .wrap .remark .active {
+        background-color: #FFF2DC; }
+      body .wrap .remark input[type=checkbox] {
+        -webkit-transform: scale(1.7);
+            -ms-transform: scale(1.7);
+                transform: scale(1.7);
+        position: absolute;
+        left: 32px;
+        top: 24px; }
+      body .wrap .remark .remarkTitle {
+        display: inline-block;
+        font-size: 24px;
+        color: #000000;
+        margin: 24px 0px 0px 72px;
+        width: 262px;
+        height: 26px;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        white-space: nowrap; }
+      body .wrap .remark i {
+        position: absolute;
+        top: 24px;
+        font-size: 24px;
+        cursor: pointer; }
+      body .wrap .remark .fa-star-o, body .wrap .remark .fa-star {
+        right: 144px; }
+      body .wrap .remark .fa-star {
+        color: #F5A623; }
+      body .wrap .remark .fa-pencil {
+        right: 88px; }
+      body .wrap .remark .fa-trash-o {
+        right: 32px; }
+      body .wrap .remark .remarkState i {
+        font-size: 18px;
+        position: static;
+        cursor: auto; }
+        body .wrap .remark .remarkState i:nth-child(1) {
+          margin: 15px 8px 17px 72px; }
+        body .wrap .remark .remarkState i:nth-child(3) {
+          margin: 0 16px; }
+      body .wrap .remark .remarkState span {
+        font-size: 16px;
+        color: #757575; }
+    body .wrap .remain {
+      font-family: Roboto-Italic;
+      font-size: 24px;
+      color: #C8C8C8;
+      margin: 0 auto;
+      width: 620px;
+      padding-left: 30px; }
+
+/*# sourceMappingURL=all.css.map */
