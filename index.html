@@ -14,98 +14,250 @@
   <body>
     <div class="wrap">
         <ul class="header d-flex justify-content-center ">
-          <li class="active"><a href="#">My tasks</a></li>
-          <li><a href="#">In Progress</a></li>
-          <li><a href="#">Completed</a></li>
+          <li class="mytask active"><a href="#">My tasks</a></li>
+          <li class="progressBtn"><a href="#">In Progress</a></li>
+          <li class="completedBtn"><a href="#">Completed</a></li>
         </ul>
         <div class="addRemark">
           <span class="text"><span class="addIcon">＋</span> Add Task</span>
         </div>
-        <!-- <div class="added">
+        <div class="added">
           <div class="addTitle">
-            <input type="checkbox">
+            <input type="checkbox" class="addedCheckbox">
             <input type="text" class="titleInput" placeholder="Type Something Here...">
             <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <i class="fa fa-pencil inEdit cancelEdit" aria-hidden="true"></i>
           </div>
           <div class="addContent">
-            <i class="fa fa-calendar" aria-hidden="true"></i>
-            <span class="">Deadline</span>
-            <input type="text" class="year" placeholder="yyyy/mm/dd">
-            <input type="text" class="hour" placeholder="hh:mm">
-            <span>File</span>
-            <i class="fa fa-file-o" aria-hidden="true"></i>
-            <a href="#" class="upload">+</a>
-            <span class="Comment">Comment</span>
-            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-            <textarea name="comment" cols="30" rows="10" placeholder="Type your memo here..."></textarea>
+            <div class="dateBlock">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <span class="">Deadline</span>
+              <input type="date" class="year" placeholder="yyyy/mm/dd">
+              <input type="time" class="hour" placeholder="hh:mm">
+            </div>
+            <div class="fileBlock">
+              <span>File</span>
+              <i class="fa fa-file-o" aria-hidden="true"></i>
+              <a href="#" class="upload">+
+                <input type="file">
+              </a>
+              <span class="fileName">Upload file.</span>
+            </div>
+            <div class="comment">
+              <span class="Comment">Comment</span>
+              <i class="fa fa-commenting-o" aria-hidden="true"></i>
+              <textarea name="comment" cols="30" rows="10" placeholder="Type your memo here..."></textarea>
+            </div>
           </div>
           <div class="addButton">
-            <a href="#" class=""><span>X</span>Cancle</a>
-            <a href="#" class=""><span>+</span> Add Task</a>
+            <a href="#" class="cancleBtn"><span>x</span>Cancle</a>
+            <a href="#" class="addBtn"><span>+</span> Add Task</a>
           </div>
-        </div> -->
-        <ul class="remark">
-          <li>
-            <input type="checkbox">
-            <span class="remarkTitle">Type Something Here...</span>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </div>
+        <ul class="remark row no-gutters">
+          <li class="col-12 order-1 active">
+            <div class="titleAndState">
+              <input type="checkbox" class="finnishBtn">
+              <input type="text" class="modifyTitle" placeholder="Type Something Here...">
+              <span class="remarkTitle">Swimming</span>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
             <p class="remarkState">
-              <i class="fa fa-calendar stateFirstIcon" aria-hidden="true"></i>
-              <span>5/14</span>
+              <i class="fa fa-calendar stateFirstIcon" aria-hidden="true">
+                <span>
+                  <span class="mouth" id="mouth">05</span>/<span class="days">14</span>
+                </span>
+              </i>
               <i class="fa fa-file-o" aria-hidden="true"></i>
               <i class="fa fa-commenting-o" aria-hidden="true"></i>
             </p>
+            <div class="editIng">
+              <div class="dateBlock">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span class="">Deadline</span>
+                <input type="date" class="year" value="2018-05-14" placeholder="yyyy/mm/dd">
+                <input type="time" class="hour" placeholder="hh:mm">
+              </div>
+              <div class="fileBlock">
+                <span>File</span>
+                <i class="fa fa-file-o" aria-hidden="true"></i>
+                <a href="#" class="upload">+
+                  <input type="file">
+                </a>
+                <span class="fileName">怕.jpg</span>
+              </div>
+              <div class="comment">
+                <span class="Comment">Comment</span>
+                <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                <textarea name="comment" cols="30" rows="10" placeholder="Type your memo here...">跟胖子去游泳</textarea>
+              </div>
+              <div class="addButton">
+                <a href="#" class="cancleBtn cancleEditBtn"><span>x</span>Cancle</a>
+                <a href="#" class="saveBtn"><span>+</span> Save</a>
+              </div>
+            </div>
           </li>
-          <li>
-            <input type="checkbox">
-            <span class="remarkTitle">Type Something Here...</span>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          <li class="col-12 order-1 active">
+            <div class="titleAndState">
+              <input type="checkbox" class="finnishBtn">
+              <input type="text" class="modifyTitle" placeholder="Type Something Here...">
+              <span class="remarkTitle">與胖子有約</span>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
             <p class="remarkState">
-              <i class="fa fa-file-o stateFirstIcon" aria-hidden="true"></i>
-              <i class="fa fa-commenting-o" aria-hidden="true"></i>
-            </p>
-          </li>
-          <li>
-            <input type="checkbox">
-            <span class="remarkTitle">Type Something Here...</span>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-            <p class="remarkState">
-              <i class="fa fa-calendar stateFirstIcon" aria-hidden="true"></i>
-              <span>6/18</span>
-            </p>
-          </li>
-          <li>
-            <input type="checkbox">
-            <span class="remarkTitle">Type Something Here...</span>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-            <p class="remarkState">
-              <i class="fa fa-file-o stateFirstIcon" aria-hidden="true"></i>
-            </p>
-          </li>
-          <li>
-            <input type="checkbox" checked>
-            <span class="remarkTitle">Type Something Here...</span>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-            <p class="remarkState">
-              <i class="fa fa-calendar stateFirstIcon" aria-hidden="true"></i>
-              <span>5/14</span>
               <i class="fa fa-file-o" aria-hidden="true"></i>
               <i class="fa fa-commenting-o" aria-hidden="true"></i>
             </p>
+            <div class="editIng">
+              <div class="dateBlock">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span class="">Deadline</span>
+                <input type="date" class="year" placeholder="yyyy/mm/dd">
+                <input type="time" class="hour" placeholder="hh:mm">
+              </div>
+              <div class="fileBlock">
+                <span>File</span>
+                <i class="fa fa-file-o" aria-hidden="true"></i>
+                <a href="#" class="upload">+
+                  <input type="file">
+                </a>
+                <span class="fileName">開心.exe</span>
+              </div>
+              <div class="comment">
+                <span class="Comment">Comment</span>
+                <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                <textarea name="comment" cols="30" rows="10" placeholder="Type your memo here...">招喚峽谷見</textarea>
+              </div>
+              <div class="addButton">
+                <a href="#" class="cancleBtn cancleEditBtn"><span>x</span>Cancle</a>
+                <a href="#" class="saveBtn"><span>+</span> Save</a>
+              </div>
+            </div>
+          </li>
+          <li class="col-12 order-12">
+            <div class="titleAndState">
+              <input type="checkbox" class="finnishBtn">
+              <input type="text" class="modifyTitle" placeholder="Type Something Here...">
+              <span class="remarkTitle">吃飯</span>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
+            <p class="remarkState">
+              <i class="fa fa-calendar stateFirstIcon" aria-hidden="true">
+                <span>
+                  <span class="mouth" id="mouth">05</span>/<span class="days">14</span>
+                </span>
+              </i>
+            </p>
+            <div class="editIng">
+              <div class="dateBlock">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span class="">Deadline</span>
+                <input type="date" class="year" value="2018-05-14" placeholder="yyyy/mm/dd">
+                <input type="time" class="hour" placeholder="hh:mm">
+              </div>
+              <div class="fileBlock">
+                <span>File</span>
+                <i class="fa fa-file-o" aria-hidden="true"></i>
+                <a href="#" class="upload">+
+                  <input type="file">
+                </a>
+                <span class="fileName">Upload file.</span>
+              </div>
+              <div class="comment">
+                <span class="Comment">Comment</span>
+                <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                <textarea name="comment" cols="30" rows="10" placeholder="Type your memo here..."></textarea>
+              </div>
+              <div class="addButton">
+                <a href="#" class="cancleBtn cancleEditBtn"><span>x</span>Cancle</a>
+                <a href="#" class="saveBtn"><span>+</span> Save</a>
+              </div>
+            </div>
+          </li>
+          <li class="col-12 order-12">
+            <div class="titleAndState">
+              <input type="checkbox" class="finnishBtn">
+              <input type="text" class="modifyTitle" placeholder="Type Something Here...">
+              <span class="remarkTitle">Cash</span>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
+            <p class="remarkState">
+              <i class="fa fa-file-o" aria-hidden="true"></i>
+            </p>
+            <div class="editIng">
+              <div class="dateBlock">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span class="">Deadline</span>
+                <input type="date" class="year" placeholder="yyyy/mm/dd">
+                <input type="time" class="hour" placeholder="hh:mm">
+              </div>
+              <div class="fileBlock">
+                <span>File</span>
+                <i class="fa fa-file-o" aria-hidden="true"></i>
+                <a href="#" class="upload">+
+                  <input type="file">
+                </a>
+                <span class="fileName">薛.jpg</span>
+              </div>
+              <div class="comment">
+                <span class="Comment">Comment</span>
+                <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                <textarea name="comment" cols="30" rows="10" placeholder="Type your memo here..."></textarea>
+              </div>
+              <div class="addButton">
+                <a href="#" class="cancleBtn cancleEditBtn"><span>x</span>Cancle</a>
+                <a href="#" class="saveBtn"><span>+</span> Save</a>
+              </div>
+            </div>
+          </li>
+          <li class="col-12 order-12">
+            <div class="titleAndState">
+              <input type="checkbox" class="finnishBtn" checked>
+              <input type="text" class="modifyTitle" placeholder="Type Something Here...">
+              <span class="remarkTitle">BombingTaiwan</span>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
+            <p class="remarkState">
+            </p>
+            <div class="editIng">
+              <div class="dateBlock">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span class="">Deadline</span>
+                <input type="date" class="year" placeholder="yyyy/mm/dd">
+                <input type="time" class="hour" placeholder="hh:mm">
+              </div>
+              <div class="fileBlock">
+                <span>File</span>
+                <i class="fa fa-file-o" aria-hidden="true"></i>
+                <a href="#" class="upload">+
+                  <input type="file">
+                </a>
+                <span class="fileName">Upload file.</span>
+              </div>
+              <div class="comment">
+                <span class="Comment">Comment</span>
+                <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                <textarea name="comment" cols="30" rows="10" placeholder="Type your memo here..."></textarea>
+              </div>
+              <div class="addButton">
+                <a href="#" class="cancleBtn cancleEditBtn"><span>x</span>Cancle</a>
+                <a href="#" class="saveBtn"><span>+</span> Save</a>
+              </div>
+            </div>
           </li>
         </ul>
-        <p class="remain">4tasks left</p>
+        <p class="remain active"><span class="remainCount">4</span>tasks left</p>
+        <p class="remain done"><span class="doneCount">1</span>tasks completed</p>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

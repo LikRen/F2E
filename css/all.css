@@ -47,7 +47,12 @@ table {
 body {
   font-size: 16px;
   font-family: "Roboto","PingFang TC","Noto Sans TC";
-  background-color: #e1e1e1; }
+  background-color: #e1e1e1;
+  margin-right: 0;
+  margin-left: 0; }
+  body > .col, body > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0; }
   body .wrap {
     max-width: 100%;
     margin: 0 auto; }
@@ -87,6 +92,11 @@ body {
         body .wrap .addRemark .text .addIcon {
           font-size: 26px;
           margin: 0px 1px 0px 25px; }
+    body .wrap .Switching {
+      visibility: hidden;
+      height: 0; }
+    body .wrap .addedMode {
+      display: none; }
     body .wrap .added {
       width: 620px;
       height: 520px;
@@ -95,7 +105,12 @@ body {
       -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
               box-shadow: 0 4px 4px 0 #C8C8C8;
       border-radius: 5px;
-      position: relative; }
+      position: relative;
+      display: none; }
+      body .wrap .added .active {
+        background-color: #FFF2DC; }
+        body .wrap .added .active .titleInput {
+          background-color: #FFF2DC !important; }
       body .wrap .added .addTitle {
         height: 76px;
         border-bottom: 2px solid #C8C8C8; }
@@ -115,7 +130,7 @@ body {
         body .wrap .added .addTitle input::-webkit-input-placeholder {
           font-size: 24px;
           color: #000;
-          font-family: Roboto-Medium; }
+          font-family: "Roboto"; }
         body .wrap .added .addTitle i {
           position: absolute;
           top: 24px;
@@ -123,41 +138,44 @@ body {
           cursor: pointer; }
         body .wrap .added .addTitle .fa-star-o, body .wrap .added .addTitle .fa-star {
           right: 88px; }
+        body .wrap .added .addTitle .fa-star {
+          color: #F5A623; }
         body .wrap .added .addTitle .fa-pencil {
           right: 32px; }
+        body .wrap .added .addTitle .inEdit {
+          color: #4A90E2; }
       body .wrap .added .addContent {
         position: relative; }
+        body .wrap .added .addContent .dateBlock, body .wrap .added .addContent .fileBlock, body .wrap .added .addContent .comment {
+          position: relative; }
         body .wrap .added .addContent i {
           position: absolute;
           font-size: 20px;
           cursor: pointer; }
-        body .wrap .added .addContent .fa-calendar {
+        body .wrap .added .addContent .fa-calendar, body .wrap .added .addContent .fa-file-o, body .wrap .added .addContent .fa-commenting-o {
           top: 27px;
-          left: 72px; }
-        body .wrap .added .addContent .fa-file-o {
-          top: 116px;
-          left: 72px; }
-        body .wrap .added .addContent .fa-commenting-o {
-          top: 207px;
           left: 72px; }
         body .wrap .added .addContent span {
           display: block;
-          margin: 27px 0 0 96px;
+          padding: 27px 0 0 96px;
           font-size: 20px;
           color: #000000; }
         body .wrap .added .addContent .year, body .wrap .added .addContent .hour {
           border: none;
-          width: 162px;
-          height: 35px; }
+          text-align: center;
+          -webkit-transform: scale(1.5);
+              -ms-transform: scale(1.5);
+                  transform: scale(1.5);
+          font-size: 10px; }
           body .wrap .added .addContent .year::-webkit-input-placeholder, body .wrap .added .addContent .hour::-webkit-input-placeholder {
             font-family: Roboto-Regular;
             font-size: 16px;
             color: #C8C8C8;
             padding-left: 16px; }
         body .wrap .added .addContent .year {
-          margin: 8px 0 0 96px; }
+          margin: 14px 0 0 129px; }
         body .wrap .added .addContent .hour {
-          margin-left: 8px; }
+          margin-left: 75px; }
         body .wrap .added .addContent .upload {
           width: 32px;
           height: 32px;
@@ -170,7 +188,27 @@ body {
           margin: 11px 0 0 96px;
           font-size: 22px;
           font-weight: bolder;
-          color: white; }
+          color: white;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+          body .wrap .added .addContent .upload:hover {
+            background-color: #4A90E2;
+            color: white; }
+          body .wrap .added .addContent .upload input[type=file] {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            top: 58px;
+            left: 96px;
+            opacity: 0;
+            overflow: hidden; }
+        body .wrap .added .addContent .fileName {
+          position: absolute;
+          top: 65px;
+          left: 146px;
+          font-size: 16px;
+          padding: 0px; }
         body .wrap .added .addContent textarea {
           width: 455px;
           height: 120px;
@@ -179,10 +217,12 @@ body {
           padding: 10px;
           font-size: 16px;
           color: #C8C8C8;
-          line-height: 24px; }
+          line-height: 24px;
+          border-radius: 2px; }
       body .wrap .added .addButton {
-        height: 60px;
-        margin-top: 30px; }
+        position: absolute;
+        bottom: 0;
+        height: 60px; }
         body .wrap .added .addButton a {
           display: inline-block;
           float: left;
@@ -192,67 +232,218 @@ body {
           text-align: center;
           background-color: #fff;
           font-size: 24px;
-          color: #D0021B; }
+          color: #D0021B;
+          text-decoration: none;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+          body .wrap .added .addButton a span {
+            font-size: 30px;
+            padding-right: 15px; }
+        body .wrap .added .addButton .addBtn {
+          color: #fff;
+          background-color: #4A90E2; }
     body .wrap .remark {
       width: 620px;
       margin: 0 auto; }
       body .wrap .remark li {
         border-radius: 5px;
         background-color: #F2F2F2;
-        border: 1px solid #F2F2F2;
         display: block;
         margin-bottom: 8px;
         position: relative; }
+      body .wrap .remark .matchLi {
+        display: none; }
       body .wrap .remark .active {
-        background-color: #FFF2DC; }
-      body .wrap .remark input[type=checkbox] {
+        background-color: #FFF2DC;
+        border: 1px solid #FFF2DC; }
+        body .wrap .remark .active .modifyTitle {
+          background-color: #FFF2DC !important; }
+      body .wrap .remark .titleAndState input[type=checkbox] {
         -webkit-transform: scale(1.7);
             -ms-transform: scale(1.7);
                 transform: scale(1.7);
         position: absolute;
         left: 32px;
-        top: 24px; }
-      body .wrap .remark .remarkTitle {
+        top: 32px; }
+      body .wrap .remark .titleAndState input:checked ~ .remarkTitle {
+        text-decoration: line-through; }
+      body .wrap .remark .titleAndState .modifyTitle {
+        border: none;
+        background-color: #F2F2F2;
+        margin: 24px 0px 24px 72px;
+        width: 250px;
+        height: 28px;
+        display: none; }
+        body .wrap .remark .titleAndState .modifyTitle::-webkit-input-placeholder {
+          font-size: 24px;
+          color: #000;
+          font-family: "Roboto"; }
+      body .wrap .remark .titleAndState .remarkTitle {
         display: inline-block;
         font-size: 24px;
         color: #000000;
-        margin: 24px 0px 0px 72px;
+        margin: 24px 0px 24px 72px;
         width: 262px;
         height: 26px;
         overflow: hidden;
         -o-text-overflow: ellipsis;
            text-overflow: ellipsis;
         white-space: nowrap; }
-      body .wrap .remark i {
+      body .wrap .remark .titleAndState i {
         position: absolute;
         top: 24px;
         font-size: 24px;
         cursor: pointer; }
-      body .wrap .remark .fa-star-o, body .wrap .remark .fa-star {
+      body .wrap .remark .titleAndState .fa-star-o, body .wrap .remark .titleAndState .fa-star {
         right: 144px; }
-      body .wrap .remark .fa-star {
+      body .wrap .remark .titleAndState .fa-star {
         color: #F5A623; }
-      body .wrap .remark .fa-pencil {
+      body .wrap .remark .titleAndState .fa-pencil {
         right: 88px; }
-      body .wrap .remark .fa-trash-o {
+      body .wrap .remark .titleAndState .inEdit {
+        color: #4A90E2; }
+      body .wrap .remark .titleAndState .fa-trash-o {
         right: 32px; }
+      body .wrap .remark .titleAndState .titleEditMode {
+        display: inline-block; }
+      body .wrap .remark .titleAndState .spanDisapper {
+        display: none; }
+      body .wrap .remark .titleEditState {
+        border-bottom: 2px solid #C8C8C8; }
       body .wrap .remark .remarkState i {
         font-size: 18px;
         position: static;
         cursor: auto; }
         body .wrap .remark .remarkState i:nth-child(1) {
-          margin: 15px 8px 17px 72px; }
-        body .wrap .remark .remarkState i:nth-child(3) {
+          margin: 0px 0px 17px 72px; }
+        body .wrap .remark .remarkState i:nth-child(2) {
           margin: 0 16px; }
+        body .wrap .remark .remarkState i > span {
+          padding-left: 8px; }
       body .wrap .remark .remarkState span {
         font-size: 16px;
         color: #757575; }
+      body .wrap .remark .editDisapper {
+        display: none; }
+      body .wrap .remark .editIng {
+        height: 445px;
+        width: 620px;
+        position: relative;
+        display: none; }
+        body .wrap .remark .editIng .dateBlock, body .wrap .remark .editIng .fileBlock, body .wrap .remark .editIng .comment {
+          position: relative; }
+        body .wrap .remark .editIng i {
+          position: absolute;
+          font-size: 20px;
+          cursor: pointer; }
+        body .wrap .remark .editIng .fa-calendar, body .wrap .remark .editIng .fa-file-o, body .wrap .remark .editIng .fa-commenting-o {
+          top: 27px;
+          left: 72px; }
+        body .wrap .remark .editIng span {
+          display: block;
+          padding: 27px 0 0 96px;
+          font-size: 20px;
+          color: #000000; }
+        body .wrap .remark .editIng .year, body .wrap .remark .editIng .hour {
+          border: none;
+          text-align: center;
+          -webkit-transform: scale(1.5);
+              -ms-transform: scale(1.5);
+                  transform: scale(1.5);
+          font-size: 10px; }
+          body .wrap .remark .editIng .year::-webkit-input-placeholder, body .wrap .remark .editIng .hour::-webkit-input-placeholder {
+            font-family: Roboto-Regular;
+            font-size: 16px;
+            color: #C8C8C8;
+            padding-left: 16px; }
+        body .wrap .remark .editIng .year {
+          margin: 14px 0 0 129px; }
+        body .wrap .remark .editIng .hour {
+          margin-left: 75px; }
+        body .wrap .remark .editIng .upload {
+          width: 32px;
+          height: 32px;
+          line-height: 32px;
+          text-decoration: none;
+          text-align: center;
+          display: block;
+          background: #C8C8C8;
+          border-radius: 2px;
+          margin: 11px 0 0 96px;
+          font-size: 22px;
+          font-weight: bolder;
+          color: white;
+          -webkit-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s; }
+          body .wrap .remark .editIng .upload:hover {
+            background-color: #4A90E2;
+            color: white; }
+          body .wrap .remark .editIng .upload input[type=file] {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            top: 58px;
+            left: 96px;
+            opacity: 0;
+            overflow: hidden; }
+        body .wrap .remark .editIng .fileName {
+          position: absolute;
+          top: 65px;
+          left: 146px;
+          font-size: 16px;
+          padding: 0px; }
+        body .wrap .remark .editIng textarea {
+          width: 455px;
+          height: 120px;
+          border: none;
+          margin: 8px 0 0 96px;
+          padding: 10px;
+          font-size: 16px;
+          color: #C8C8C8;
+          line-height: 24px;
+          border-radius: 2px; }
+        body .wrap .remark .editIng .addButton {
+          position: absolute;
+          bottom: 0;
+          height: 60px; }
+          body .wrap .remark .editIng .addButton a {
+            display: inline-block;
+            float: left;
+            width: 310px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background-color: #fff;
+            font-size: 24px;
+            color: #D0021B;
+            text-decoration: none;
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s; }
+            body .wrap .remark .editIng .addButton a span {
+              padding: 0px;
+              display: inline;
+              font-size: 30px;
+              padding-right: 15px;
+              color: unset; }
+          body .wrap .remark .editIng .addButton .saveBtn {
+            color: #fff;
+            background-color: #4A90E2; }
+      body .wrap .remark .editMode {
+        display: block; }
     body .wrap .remain {
       font-family: Roboto-Italic;
       font-size: 24px;
       color: #C8C8C8;
       margin: 0 auto;
       width: 620px;
-      padding-left: 30px; }
+      padding-left: 30px;
+      display: none; }
+    body .wrap .done {
+      display: none; }
+    body .wrap .active {
+      display: block; }
 
 /*# sourceMappingURL=all.css.map */
